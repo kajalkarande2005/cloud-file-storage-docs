@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CloudVault | Cloud File Storage</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0b1220;
+      color: #e8eefc;
+      line-height: 1.7;
+    }
+    header {
+      text-align: center;
+      padding: 65px 20px;
+      background: linear-gradient(135deg, #123b70, #542c86);
+    }
+    header h1 { font-size: 44px; margin: 0; }
+    nav {
+      padding: 16px;
+      text-align: center;
+      background: #111c30;
+    }
+    nav a {
+      color: #a9d3ff;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+    main { max-width: 950px; margin: auto; padding: 20px; }
+    section {
+      background: #131f33;
+      border: 1px solid #283a56;
+      border-radius: 14px;
+      padding: 24px;
+      margin: 22px 0;
+    }
+    h2 { color: #91c8ff; }
+    footer { text-align: center; padding: 25px; color: #aab7ce; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>CloudVault</h1>
+    <p>Cloud File Storage with Encryption and CDN</p>
+    <p>Secure storage through file segmentation and encryption.</p>
+  </header>
+
+  <nav>
+    <a href="#overview">Overview</a>
+    <a href="#features">Features</a>
+    <a href="#workflow">Workflow</a>
+    <a href="#security">Security</a>
+    <a href="#cdn">CDN &amp; HTTPS</a>
+  </nav>
+
+  <main>
+    <section id="overview">
+      <h2>Project Overview</h2>
+      <p>This Python Flask application divides uploaded files into 1 MB blocks, encrypts each block, and stores the encrypted data in Garage, an S3-compatible object storage service.</p>
+      <p>Users can download encrypted blocks or retrieve and decrypt the original file.</p>
+    </section>
+
+    <section id="features">
+      <h2>Key Features</h2>
+      <ul>
+        <li>File segmentation into 1 MB blocks</li>
+        <li>Fernet encryption of stored blocks</li>
+        <li>Object storage using Garage</li>
+        <li>Download of encrypted blocks in a ZIP archive</li>
+        <li>Original file retrieval and decryption</li>
+      </ul>
+    </section>
+
+    <section id="workflow">
+      <h2>How It Works</h2>
+      <ol>
+        <li>The user uploads a file.</li>
+        <li>The application divides it into blocks.</li>
+        <li>Each block is encrypted before storage.</li>
+        <li>Encrypted blocks and metadata are saved in Garage.</li>
+        <li>The user downloads encrypted blocks or the decrypted original file.</li>
+      </ol>
+    </section>
+
+    <section id="security">
+      <h2>Security</h2>
+      <p>Fernet provides authenticated symmetric encryption. The encryption key and storage credentials must remain private.</p>
+      <p>This documentation page does not contain secret keys or connect to the local backend.</p>
+    </section>
+
+    <section id="cdn">
+      <h2>CDN and HTTPS</h2>
+      <p>A Content Delivery Network distributes website content through geographically distributed infrastructure.</p>
+      <p>This documentation site will be published using Cloudflare Pages, which provides HTTPS and global content delivery.</p>
+      <p>The current storage backend runs locally. Connecting a public cloud storage provider such as AWS S3, Azure Blob Storage, or Google Cloud Storage remains a separate task if required by the assignment.</p>
+    </section>
+  </main>
+
+  <footer>CloudVault — Cloud File Storage Project Documentation</footer>
+</body>
+</html>
